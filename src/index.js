@@ -5,7 +5,7 @@ import { pizzaData } from "./data.js";
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <Menu />
       <Footer />
@@ -14,14 +14,28 @@ function App() {
 }
 
 function Header() {
-  return <h1>Fast React Co.</h1>;
+  return (
+    <header className="header">
+      <h1>Fast React Co.</h1>
+    </header>
+  );
 }
 
 function Menu() {
   return (
-    <div>
+    <main className="menu">
       <h2>Our menu</h2>
       <Pizza />
+    </main>
+  );
+}
+
+function Pizza() {
+  return (
+    <div className="pizza">
+      <img src="pizzas/spinaci.jpg" alt="Pizza spinaci" />
+      <h3>Pizza</h3>
+      <p>ingredients</p>
     </div>
   );
 }
@@ -32,16 +46,7 @@ function Footer() {
   const isOpen = hour >= workHours.start && hour <= workHours.close;
   const msg = isOpen ? "We're currently open!" : "We close now!";
 
-  return <footer>{msg}</footer>;
-}
-
-function Pizza() {
-  return (
-    <div>
-      <img src="pizzas/spinaci.jpg" alt="Pizza spinaci" />
-      <h2>Pizza</h2>
-    </div>
-  );
+  return <footer className="footer">{msg}</footer>;
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
