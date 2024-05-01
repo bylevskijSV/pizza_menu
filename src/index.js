@@ -35,14 +35,14 @@ function Menu() {
   );
 }
 
-function Pizza(props) {
+function Pizza({ pizza }) {
   return (
     <li className="pizza">
-      <img src={props.pizza.photoName} alt={props.pizza.name} />
+      <img src={pizza.photoName} alt={pizza.name} />
       <div>
-        <h3>{props.pizza.name}</h3>
-        <p>{props.pizza.ingredients}</p>
-        <span>{props.pizza.price}</span>
+        <h3>{pizza.name}</h3>
+        <p>{pizza.ingredients}</p>
+        <span>{pizza.price}</span>
       </div>
     </li>
   );
