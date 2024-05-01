@@ -52,9 +52,28 @@ function Footer() {
   const hour = new Date().getHours();
   const workHours = { start: 10, close: 22 };
   const isOpen = hour >= workHours.start && hour <= workHours.close;
-  const msg = isOpen ? "We're currently open!" : "We close now!";
+  const open_to_order = (
+    <>
+      <p>
+        Now: {new Date().toLocaleTimeString()}. We're open until{" "}
+        {workHours.close}:00. Come visit us or order online.
+      </p>
+      <button className="btn">Order</button>
+    </>
+  );
 
-  return <footer className="footer">{msg}</footer>;
+  const close_to_order = (
+    <p>
+      Now: {new Date().toLocaleTimeString()}. We're closed until{" "}
+      {workHours.start}:00. Come visit us in work hours.
+    </p>
+  );
+
+  return (
+    <footer className="footer">
+      <div className="order">{isOpen ? open_to_order : close_to_order}</div>
+    </footer>
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
