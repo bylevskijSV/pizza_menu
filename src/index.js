@@ -6,10 +6,28 @@ import { pizzaData } from "./data.js";
 function App() {
   return (
     <div>
-      <h1>Hello React!</h1>
+      <Header />
+      <Menu />
+      <Footer />
+    </div>
+  );
+}
+
+function Header() {
+  return <h1>Fast React Co.</h1>;
+}
+
+function Menu() {
+  return (
+    <div>
+      <h2>Our menu</h2>
       <Pizza />
     </div>
   );
+}
+
+function Footer() {
+  return <footer>We're currently open!</footer>;
 }
 
 function Pizza() {
