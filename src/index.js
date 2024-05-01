@@ -27,7 +27,12 @@ function Menu() {
 }
 
 function Footer() {
-  return <footer>We're currently open!</footer>;
+  const hour = new Date().getHours();
+  const workHours = { start: 10, close: 22 };
+  const isOpen = hour >= workHours.start && hour <= workHours.close;
+  const msg = isOpen ? "We're currently open!" : "We close now!";
+
+  return <footer>{msg}</footer>;
 }
 
 function Pizza() {
